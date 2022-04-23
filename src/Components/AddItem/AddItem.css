@@ -1,39 +1,47 @@
 .add-box {
-    background-color: white;
-    width: 40%;
-    height: fit-content;
-    border-radius: 8px;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
+  background-color: white;
+  width: 35%;
+  height: fit-content;
+  border-radius: 8px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 .final-price {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
-.final-price h4  {
-    display: inline;
-    font-size: 1.5rem;
-    font-weight: bold;
+.final-price span {
+  font-weight: 500;
 }
 
-.add-box input {
-    width: 100%;
-    outline: none;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    margin-bottom: 2rem;
+.final-price h4 {
+  display: inline;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.add-box input,
+.add-box1 input {
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 .add-box button {
-    width: 90%;
-    background-color: rgb(46, 78, 255);
-    color: white;
-    border-radius: 2rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: .7rem;
-    align-self: center;
+  width: 90%;
+  background-color: rgb(46, 78, 255);
+  color: white;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  align-self: center;
+}
+
+.add-box button:hover {
+  background-color: rgb(69, 91, 212);
 }

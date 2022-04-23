@@ -1,10 +1,9 @@
 .App {
-  /* text-align: center; */
-  background-color: rgb(255, 150, 131);
+  background-color: rgb(240, 240, 240);
   height: 100vh;
   font-size: 1rem;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   overflow: scroll;
 }
-
