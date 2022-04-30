@@ -10,7 +10,7 @@ const Total = ({ data }) => {
   const totalDiscount = totalPrice
     ? Math.floor(TotalDiscount(totalPayment, totalPrice))
     : 0;
-
+  console.log("total rendered");
   return (
     <div className="total-box">
       <div>

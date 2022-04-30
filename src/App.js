@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import AddItem from "./Components/AddItem/AddItem";
 import Bag from "./Components/Bag/Bag";
+import Panel from "./Components/Panel/Panel";
 
 function App() {
   const [data, setData] = useState([]);
 
+  console.log(`app rendered`);
+  console.log("data= ", data);
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("data"));
+    if (localData) setData(localData);
+    console.log("useeffect in app executed");
+  }, []);
+
   return (
     <div className="App">
-      <AddItem data={data} setData={setData} />
+      <Panel data={data} setData={setData} />
       <Bag data={data} setData={setData} />
     </div>
   );

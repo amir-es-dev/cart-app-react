@@ -4,12 +4,13 @@ import Delete from "../Delete/Delete";
 import Edit from "../Edit/Edit";
 
 const Bag = ({ data, setData }) => {
-  console.log(data);
+  console.log("bag rendered");
+
   return (
     <div className="bag-box">
       <div className="item-container">
-        {data.map((item, i) => (
-          <div className="item-box" key={i}>
+        {data.map((item) => (
+          <div className="item-box" key={item.id}>
             <div>
               <p>Name</p>
               <p>{item.name}</p>
@@ -32,8 +33,8 @@ const Bag = ({ data, setData }) => {
             </div>
             <div>
               <p>Action</p>
-              <Delete index={i} data={data} setData={setData} />
-              <Edit index={i} data={data} setData={setData} />
+              <Delete selectedItem={item} data={data} setData={setData} />
+              <Edit selectedItem={item} data={data} setData={setData} />
             </div>
           </div>
         ))}

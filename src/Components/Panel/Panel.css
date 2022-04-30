@@ -1,12 +1,21 @@
-.add-box {
+.panel {
   background-color: white;
-  width: 35%;
   height: fit-content;
   border-radius: 8px;
-  padding: 3rem;
   display: flex;
   flex-direction: column;
 }
+
+.main-panel {
+  width: 35%;
+  padding: 1.5rem 2rem;
+}
+
+.edit-panel {
+  width: 90%;
+  padding-left: 2rem;
+}
+
 .final-price {
   margin: 2rem 0;
 }
@@ -21,8 +30,7 @@
   font-weight: bold;
 }
 
-.add-box input,
-.add-box1 input {
+.panel input {
   width: 100%;
   outline: none;
   border: 1px solid lightgray;
@@ -30,8 +38,7 @@
   margin-bottom: 2rem;
 }
 
-.add-box button,
-.add-box1 button {
+.panel button {
   width: 90%;
   background-color: rgb(46, 78, 255);
   color: white;
@@ -41,8 +48,9 @@
   cursor: pointer;
   padding: 0.7rem;
   align-self: center;
+  font-weight: bold;
 }
 
-.add-box button:hover {
+.panel button:hover {
   background-color: rgb(69, 91, 212);
 }

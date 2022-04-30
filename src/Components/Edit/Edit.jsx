@@ -1,54 +1,20 @@
 import { EditOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
 import React, { useState } from "react";
-import EditModal from "../EditModal/EditModal";
-import { FinalPrice } from "../../modules/FinalPrice";
+import Panel from "../Panel/Panel";
 
-const Edit = ({ index, data, setData }) => {
-  const [editModal, setEditModal] = useState(false);
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [count, setCount] = useState(1);
-  const [discount, setDiscount] = useState(0);
+const Edit = ({ selectedItem, data, setData }) => {
+  const [editModal, setEditModal] = useState();
+
+  console.log("edit rendered");
+  console.log("editModal= ", editModal);
 
   const handleEdit = () => {
-    setEditModal(true);
-    setName(data[index]?.name);
-    setPrice(data[index]?.price / data[index]?.count);
-    setCount(data[index]?.count);
-    setDiscount(data[index]?.discount);
-  };
-
-  const handleOk = () => {
-    if (
-      !name ||
-      !price ||
-      !count ||
-      typeof count !== "number" ||
-      typeof price !== "number"
-    ) {
-      alert("please insert valid information");
-      setName(data[index]?.name);
-      setPrice(data[index]?.price / data[index]?.count);
-      setCount(data[index]?.count);
-      setDiscount(data[index]?.discount);
-      return;
-    }
-    const newdata = data.filter((item, i) => i !== index);
-    const item = {
-      name,
-      price: price * count,
-      discount,
-      count,
-      finalPrice: FinalPrice(price, discount, count),
-    };
-    newdata.splice(index, 0, item);
-    setData(newdata);
-    setEditModal(false);
+    setEditModal(selectedItem);
   };
 
   const handleCancel = () => {
-    setEditModal(false);
+    setEditModal();
   };
 
   return (
@@ -57,23 +23,17 @@ const Edit = ({ index, data, setData }) => {
         <EditOutlined style={{ color: "green", fontSize: "1.5rem" }} />
       </button>
       <Modal
-        title="Edit Item"
+        destroyOnClose={true}
+        title="Edit Products"
         visible={editModal}
-        onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
-        <EditModal
-          index={index}
+        <Panel
           data={data}
           setData={setData}
-          name={name}
-          setName={setName}
-          price={price}
-          setPrice={setPrice}
-          count={count}
-          setCount={setCount}
-          discount={discount}
-          setDiscount={setDiscount}
+          editModal={editModal}
+          setEditModal={setEditModal}
         />
       </Modal>
     </React.Fragment>
