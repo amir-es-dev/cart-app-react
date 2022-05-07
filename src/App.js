@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Panel data={data} setData={setData} />
+      <Panel data={data} setData={setData} editModal="" setEditModal="" />
       <Bag data={data} setData={setData} />
     </div>
   );
